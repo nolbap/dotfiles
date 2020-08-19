@@ -1,0 +1,88 @@
+ft.autohint: 1
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+*.font: terminus:size=14:noto-fonts-emoji:pixelsize=14;
+*.alpha: .95
+
+! 8-Bit green palette
+
+!! special
+!*.foreground:   #bedc7f
+!*.background:   #112318
+!*.cursorColor:  #bedc7f
+!
+!! black
+!*.color0:       #306230
+!*.color8:       #bedc7f
+!
+!! red
+!*.color1:       #89a257
+!*.color9:       #89a257
+!
+!! green
+!*.color2:       #8bac0f
+!*.color10:      #8bac0f
+!
+!! yellow
+!*.color3:       #77b000 
+!*.color11:      #77b000
+!
+!! blue
+!*.color4:       #4d8061
+!*.color12:      #4d8061
+!
+!! magenta
+!*.color5:       #567112
+!*.color13:      #567112
+!
+!! cyan
+!*.color6:       #9bbc0f
+!*.color14:      #9bbc0f
+!
+!! white
+!*.color7:       #bedc7f
+!*.color15:      #bedc7f
+
+! Gentoo color scheme
+
+! special
+*.foreground:   #fafafa
+*.background:   #2e2756
+*.cursorColor:  #fafafa
+
+! black
+*.color0:       #4f4473
+*.color8:       #fafafa
+
+! red
+*.color1:       #f4b5b5
+*.color9:       #f4b5b5
+
+! green
+*.color2:       #9587c2
+*.color10:    	#9587c2
+
+! yellow
+*.color3:       #8be1f5
+*.color11:      #4cd0f0
+
+! blue
+*.color4:       #ab91f2
+*.color12:      #ab91f2
+
+! magenta
+*.color5:       #876cce
+*.color13:      #876cce
+
+! cyan
+*.color6:       #cdf2fb
+*.color14:      #cdf2fb
+
+! white
+*.color7:       #DDDFFF
+*.color15:      #DDDFFF
+

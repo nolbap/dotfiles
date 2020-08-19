@@ -1,0 +1,135 @@
+;==========================================================
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;==========================================================
+
+[bar/main]
+width = 100%
+height = 19
+
+background = #222222
+foreground = #fafafa 
+
+font-0 = terminus:pixelsize=14;2
+font-1 = symbola:pixelsize=13;2.5
+font-2 = Noto Sans CJK JP:style=Regular:size=10;2
+
+monitor = ${env:MONITOR:eDP1}
+tray-position = ${env:TRAY_POSITION:right}
+tray-padding = 5
+modules-right = mpd separator xbacklight separator alsa separator date separator time separator
+modules-left = separator i3 separator xwindow
+
+[bar/sidebar]
+width = 100%
+height = 19
+
+font-0 = terminus:pixelsize=14;2
+font-1 = symbola:pixelsize=13;2.5
+font-2 = Noto Sans CJK JP:style=Regular:size=10;2
+
+monitor = ${env:MONITOR:HDMI1}
+modules-left = separator i3 separator xwindow
+modules-center = mpd separator 
+
+[module/i3]
+pin-workspaces = true
+type = internal/i3
+format = <label-state><label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; focused = Active workspace on focused monitor
+label-focused = %index% 
+label-focused-background = #737373
+label-focused-padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-background = #404040
+label-unfocused-padding = 1
+
+label-visible = %index%
+label-visible-background = #404040
+label-visible-padding = 1 
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = #bd2c40 
+label-urgent-padding = 1
+
+; Separator in between workspaces
+label-separator = |
+label-separator-background = $background
+
+[module/separator]
+type = custom/text
+content = "|"
+
+[module/xwindow]
+type = internal/xwindow
+label =" %title%"
+label-maxlen = 70
+
+[module/mpd]
+type = internal/mpd
+
+label-song ="| 🎜 %title% " 
+label-song-maxlen = 70
+
+label-offline = 
+
+format-online = <label-song>
+format-offline = <label-offline>
+
+[module/xbacklight]
+type = internal/backlight
+card = intel_backlight
+format =<ramp><label>
+label ="%percentage%% "
+
+ramp-0 =" 🌕 "
+ramp-1 =" 🌔 "
+ramp-2 =" 🌓 "
+ramp-3 =" 🌒 "
+ramp-4 =" 🌑 "
+
+[module/alsa]
+type = internal/alsa
+
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+format-volume =<ramp-volume><label-volume>
+label-volume ="%percentage%% "
+label-volume-foreground = ${root.foreground}
+
+label-muted =" 🔇 muted "
+label-muted-foreground = #666
+
+ramp-volume-0 =" 🔈 "
+ramp-volume-1 =" 🔉 "
+ramp-volume-2 =" 🔊 "
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = %A, %B %d
+label = " 📆 %date% "
+
+[module/time]
+type = internal/date
+interval = 1
+time = %I:%M:%S%p
+
+format-prefix = 
+label =" ⏲ %time% "
+
+[settings]
+screenchange-reload = true
