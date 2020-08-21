@@ -1,0 +1,10 @@
+xrandr --output HDMI1 --off
+xrdb /home/nolbap/.Xresources &
+setxkbmap latam &
+feh --no-fehbg --bg-fill '/home/nolbap/Imágenes/wallpapers/wallpaper.png' &
+mpd &
+xcompmgr &
+dunst &
+slstatus &
+exec dwm
+

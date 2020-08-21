@@ -1,0 +1,3 @@
+#!/bin/bash
+
+[ $(echo -e "Sí\nNo" | dmenu -i -p "$1") == "Sí" ] && $2
