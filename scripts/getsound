@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "$(amixer get Master | awk NR==5 | cut -d ' ' -f8)" == "[off]" ]; then
+	echo "  muted "
+else
+	amixer get Master | awk -F "[][]" '/%/ { print $2 }' |  head -n1 | xargs -I {} echo '  {} '
+
+fi

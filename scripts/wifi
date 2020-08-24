@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$(cat /sys/class/net/wlp2s0/operstate)" == "up" ]; then
+	echo "  $(iw dev | grep ssid | cut -d ' ' -f2) "
+else
+	echo "  Disconnected "
+fi
